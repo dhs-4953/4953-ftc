@@ -6,15 +6,15 @@ import com.qualcomm.robotcore.hardware.TouchSensor;
 /**
  * Created by Anna_ on 10/3/2015.
  */
-public class PracticeProgram extends K9TeleOp{
+public class PracticeProgram extends K9TankDrive{
     DcMotor frontleftmotor;
     DcMotor backleftmotor;
     DcMotor frontrightmotor;
     DcMotor backrightmotor;
     TouchSensor touchSensor;
 
-    @Override
-    public void runOpMode() throws InterruptedException {
+
+    public () throws InterruptedException {
         // Get references to the motors from the hardware map
         frontleftmotor = hardwareMap.dcMotor.get("left_drive");
         frontrightmotor = hardwareMap.dcMotor.get("right_drive");
@@ -31,7 +31,7 @@ public class PracticeProgram extends K9TeleOp{
         // Get a reference to the touch sensor
         touchSensor = hardwareMap.touchSensor.get("sensor_touch");}
 
-    public void runOpMode() throws InterruptedException {
+    public runOpMode() throws InterruptedException {
         // Get references to the motors from the hardware map
         backleftmotor = hardwareMap.dcMotor.get("left_drive");
         backrightmotor = hardwareMap.dcMotor.get("right_drive");
@@ -50,7 +50,7 @@ public class PracticeProgram extends K9TeleOp{
         // Wait for the start button to be pressed
         waitForStart();
 
-        while(opModeIsActive()) {
+        while(K9TankDrive()) {
             if(touchSensor.isPressed()) {
                 //Stop the motors if the touch sensor is pressed
                 frontleftmotor.setPower(0);
