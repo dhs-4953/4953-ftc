@@ -31,7 +31,7 @@ public class PracticeProgram extends K9TankDrive{
         // Get a reference to the touch sensor
         touchSensor = hardwareMap.touchSensor.get("sensor_touch");}
 
-    public runOpMode() throws InterruptedException {
+    public K9TankDrive() throws InterruptedException {
         // Get references to the motors from the hardware map
         backleftmotor = hardwareMap.dcMotor.get("left_drive");
         backrightmotor = hardwareMap.dcMotor.get("right_drive");
@@ -50,7 +50,7 @@ public class PracticeProgram extends K9TankDrive{
         // Wait for the start button to be pressed
         waitForStart();
 
-        while(K9TankDrive()) {
+        while(K9TankDrive) {
             if(touchSensor.isPressed()) {
                 //Stop the motors if the touch sensor is pressed
                 frontleftmotor.setPower(0);
@@ -60,13 +60,6 @@ public class PracticeProgram extends K9TankDrive{
                 frontleftmotor.setPower(0.5);
                 frontrightmotor.setPower(0.5);
             }
-
-            telemetry.addData("isPressed", String.valueOf(touchSensor.isPressed()));
-
-            // Wait for a hardware cycle to allow other processes to run
-            waitOneFullHardwareCycle();
-        }
-        while(opModeIsActive()) {
             if(touchSensor.isPressed()) {
                 //Stop the motors if the touch sensor is pressed
                 backleftmotor.setPower(0);
@@ -76,11 +69,7 @@ public class PracticeProgram extends K9TankDrive{
                 backleftmotor.setPower(0.5);
                 backrightmotor.setPower(0.5);
             }
-
             telemetry.addData("isPressed", String.valueOf(touchSensor.isPressed()));
-
-            // Wait for a hardware cycle to allow other processes to run
-            waitOneFullHardwareCycle();
     }
 }
 
